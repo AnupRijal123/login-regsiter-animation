@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=initial-device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Register Animation</title>
     <link rel="stylesheet" href="./index.css" />
 </head>
@@ -12,7 +12,7 @@
     <div class="main-container">
         <div class="content-container">
             <div class="form-container">
-                <div class="form-layout">
+                <div class="form-layout register-form">
                     <h2 class="form-title-heading">Register</h2>
                     <div class="row">
                         <h3>full name</h3>
@@ -27,11 +27,11 @@
                         <input type="password" />
                     </div>
 
-                    <button>Register</button>
+                    <button id="register-button">Register</button>
 
                 </div>
 
-                <div class="form-layout">
+                <div class="form-layout login-form">
                     <h2 class="form-title-heading">Login</h2>
                     <div class="row">
                         <h3>email</h3>
@@ -42,16 +42,24 @@
                         <input type="password" />
                     </div>
 
-                    <button>Login</button>
+                    <button id="login-button">Login</button>
 
                 </div>
 
             </div>
             <div class="description-container">
-                <h3>Hello! ,Please Register to view</h3>
+                <div class="register-description">
+                    <h3>Register</h3>
+                </div>
+                <div class="login-description">
+                    <h3>Login</h3>
+                </div>
+
             </div>
         </div>
     </div>
+
+    <script src="./index.js"></script>
 </body>
 
 </html>

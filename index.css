@@ -31,7 +31,18 @@ h3 {
     background-color: pink;
     position: absolute;
     width: 48%;
+    left: 0;
 
+}
+
+.register-clicked .form-container {
+    animation: moveFormContainerToRight 1s forwards;
+}
+
+@keyframes moveFormContainerToRight {
+    to {
+        left: 52%;
+    }
 }
 
 .form-layout {
@@ -39,6 +50,90 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+}
+
+.register-form {
+    position: absolute;
+    z-index: 1;
+}
+
+.register-clicked .register-form {
+    animation: fadeRegisterForm 1s forwards;
+}
+
+
+@keyframes fadeRegisterForm {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.login-clicked .register-form {
+    animation: slowShowRegisterForm 1s forwards;
+}
+
+@keyframes slowShowRegisterForm {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.login-form {
+    position: absolute;
+}
+
+.register-clicked .login-form {
+    animation: slowShowLoginForm 1s forwards;
+}
+
+@keyframes slowShowLoginForm {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+.login-clicked .login-form {
+    animation: fadeLoginForm 1s forwards;
+}
+
+@keyframes fadeLoginForm {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.login-clicked .form-container {
+    z-index: 2;
+    animation: moveFormContainerToLeft 1s forwards;
+}
+
+@keyframes moveFormContainerToLeft {
+    0% {
+        left: 52%;
+    }
+
+    100% {
+        left: 0;
+    }
 }
 
 .form-title-heading {
@@ -77,4 +172,98 @@ input {
     height: 200px;
     position: absolute;
     right: 0;
+    z-index: 1;
+}
+
+.register-clicked .description-container {
+    animation: moveDescriptionContainerToLeft 1s forwards;
+}
+
+@keyframes moveDescriptionContainerToLeft {
+    to {
+        right: 52%;
+    }
+}
+
+.login-clicked .description-container {
+    animation: moveDescriptionContainerToRight 1s forwards;
+}
+
+@keyframes moveDescriptionContainerToRight {
+    0% {
+        right: 52%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+.register-description {
+    background-color: green;
+    position: absolute;
+    z-index: 1;
+}
+
+.register-clicked .register-description {
+    animation: fadeRegisterDescription 1s forwards;
+}
+
+@keyframes fadeRegisterDescription {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.login-description {
+    background-color: pink;
+    position: absolute;
+}
+
+.register-clicked .login-description {
+    animation: slowShowLoginDescription 1s forwards;
+}
+
+@keyframes slowShowLoginDescription {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-clicked .login-description {
+    animation: fadeLoginDescription 1s forwards;
+}
+
+@keyframes fadeLoginDescription {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.login-clicked .register-description {
+    animation: slowShowRegisterDescription 1s forwards;
+}
+
+@keyframes slowShowRegisterDescription {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
