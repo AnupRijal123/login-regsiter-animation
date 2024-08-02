@@ -2,20 +2,44 @@ body {
     margin: 0;
 }
 
+h1,
 h2,
 h3 {
     margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #01ffff;
+}
+
+h1 {
+    font-size: 40px;
 }
 
 .main-container {
-    background-color: red;
+    background-color: #3a3b3c;
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: auto;
+}
+
+.name-continaer {
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .content-container {
-    background-color: yellow;
+    background-color: #111;
     width: 50%;
     position: absolute;
     top: 20%;
@@ -23,34 +47,35 @@ h3 {
     right: 0;
     margin: auto;
     height: 400px;
-
-
+    box-shadow: 0px 0px 45px 20px rgba(1, 255, 255, 0.8);
 }
 
 .form-container {
-    background-color: pink;
     position: absolute;
     width: 48%;
-    left: 0;
+    left: 2%;
 
 }
 
 .register-clicked .form-container {
-    animation: moveFormContainerToRight 1s forwards;
+    animation: moveFormContainerToRight 0.4s forwards;
 }
 
 @keyframes moveFormContainerToRight {
     to {
-        left: 52%;
+        left: 50%;
     }
 }
 
 .form-layout {
-    background-color: purple;
+    background-color: #111;
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    height: 400px;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 
 .register-form {
@@ -59,7 +84,7 @@ h3 {
 }
 
 .register-clicked .register-form {
-    animation: fadeRegisterForm 1s forwards;
+    animation: fadeRegisterForm 0.4s forwards;
 }
 
 
@@ -74,7 +99,7 @@ h3 {
 }
 
 .login-clicked .register-form {
-    animation: slowShowRegisterForm 1s forwards;
+    animation: slowShowRegisterForm 0.4s forwards;
 }
 
 @keyframes slowShowRegisterForm {
@@ -93,7 +118,7 @@ h3 {
 }
 
 .register-clicked .login-form {
-    animation: slowShowLoginForm 1s forwards;
+    animation: slowShowLoginForm 0.4s forwards;
 }
 
 @keyframes slowShowLoginForm {
@@ -108,7 +133,7 @@ h3 {
 }
 
 .login-clicked .login-form {
-    animation: fadeLoginForm 1s forwards;
+    animation: fadeLoginForm 0.4s forwards;
 }
 
 @keyframes fadeLoginForm {
@@ -123,21 +148,21 @@ h3 {
 
 .login-clicked .form-container {
     z-index: 2;
-    animation: moveFormContainerToLeft 1s forwards;
+    animation: moveFormContainerToLeft 0.4s forwards;
 }
 
 @keyframes moveFormContainerToLeft {
     0% {
-        left: 52%;
+        left: 50%;
     }
 
     100% {
-        left: 0;
+        left: 2%;
     }
 }
 
 .form-title-heading {
-    color: orange;
+    color: #01ffff;
     text-align: center;
 }
 
@@ -145,9 +170,19 @@ h3 {
     padding: 5px 0px;
 }
 
+.button-row {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
 input {
     outline: none;
-    border: 1px solid #000000;
+    background-color: #111;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     width: 100%;
     padding: 10px;
@@ -156,27 +191,38 @@ input {
 }
 
 .form-container button {
-    background-color: green;
+    background-color: #01ffff;
     width: fit-content;
-    margin: auto;
     padding: 10px;
     border: none;
     border-radius: 4px;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    box-shadow: 0px 10px 18px -3px #ffffff;
 }
 
 .description-container {
-    background-color: blue;
+    background-color: #01ffff;
     width: 48%;
-    height: 200px;
+    height: 390px;
     position: absolute;
     right: 0;
     z-index: 1;
+    top: 5px;
 }
 
+.description-container h1,
+.description-container h2 {
+    color: #ffffff;
+}
+
+
 .register-clicked .description-container {
-    animation: moveDescriptionContainerToLeft 1s forwards;
+    animation: moveDescriptionContainerToLeft 0.4s forwards;
 }
 
 @keyframes moveDescriptionContainerToLeft {
@@ -186,7 +232,7 @@ input {
 }
 
 .login-clicked .description-container {
-    animation: moveDescriptionContainerToRight 1s forwards;
+    animation: moveDescriptionContainerToRight 0.4s forwards;
 }
 
 @keyframes moveDescriptionContainerToRight {
@@ -200,13 +246,18 @@ input {
 }
 
 .register-description {
-    background-color: green;
     position: absolute;
     z-index: 1;
+    top: 100px;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+
 }
 
 .register-clicked .register-description {
-    animation: fadeRegisterDescription 1s forwards;
+    animation: fadeRegisterDescription 0.4s forwards;
 }
 
 @keyframes fadeRegisterDescription {
@@ -222,12 +273,17 @@ input {
 
 
 .login-description {
-    background-color: pink;
     position: absolute;
+    top: 100px;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
 }
 
 .register-clicked .login-description {
-    animation: slowShowLoginDescription 1s forwards;
+    animation: slowShowLoginDescription 0.4s forwards;
 }
 
 @keyframes slowShowLoginDescription {
@@ -241,7 +297,7 @@ input {
 }
 
 .login-clicked .login-description {
-    animation: fadeLoginDescription 1s forwards;
+    animation: fadeLoginDescription 0.4s forwards;
 }
 
 @keyframes fadeLoginDescription {
@@ -255,7 +311,7 @@ input {
 }
 
 .login-clicked .register-description {
-    animation: slowShowRegisterDescription 1s forwards;
+    animation: slowShowRegisterDescription 0.4s forwards;
 }
 
 @keyframes slowShowRegisterDescription {
@@ -265,5 +321,17 @@ input {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width:920px) {
+    h1 {
+        word-break: break-all;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .content-container {
+        width: 90%;
     }
 }
